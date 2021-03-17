@@ -12,8 +12,8 @@ class Xc < Formula
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     cd "component/xc"
-    system "cargo", "build", "--locked", "--release", "-p", "xc"
-    bin.install "../../.local/var/cargo/release/xc"
+    system "cargo", "build", "--locked", "--release", "-p", "xs"
+    bin.install "../../.local/var/cargo/release/xs"
   end
 
   test do
