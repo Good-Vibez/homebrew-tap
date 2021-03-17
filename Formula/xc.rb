@@ -5,18 +5,14 @@ class Xc < Formula
   desc "A converter from anythin to anything"
   homepage "https://github.com/Good-Vibez/ct"
   url "https://github.com/Good-Vibez/ct"
+  head "https://github.com/Good-Vibez/ct", branch: :dev
   version "0.0.1"
-  sha256 "9e7261c0a1e3a62607e927a0a7a575172bea8637"
+  sha256 "37456a19be80e8a9ec8d0f1b37842ff69a0296456e3c10864e00910b9c241f4a"
   license "MIT"
 
   depends_on "rust" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cargo", "build", "--release", "-p", "xc"
   end
 
